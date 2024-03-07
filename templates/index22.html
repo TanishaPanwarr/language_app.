@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<!-- language_app/templates/index.html -->
+<header>
+    <h1>Welcome to Language Learning App</h1>
+    
+</header>
+
+
+{% block title %}Welcome to the Language Learning App{% endblock %}
+
+{% block content %}
+  <h2>Welcome to the Language Learning App</h2>
+  <p>This is the home page content.</p>
+
+  <h2>Getting Started</h2>
+  <ul>
+    <li><a href="{% url 'signup' %}">Sign Up</a> to create an account</li>
+    <li><a href="{% url 'login' %}">Log In</a> if you already have an account</li>
+  </ul>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Interactive Lessons</li>
+    <li>User Profiles and Progress Tracking</li>
+    <li>Community Interaction and Language Exchange</li>
+  </ul>
+{% endblock %}
+
+    <section>
+<!-- Display a list of languages -->
+<ul>
+    {% for language in languages %}
+        <li>{{ language.name }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Display a list of courses -->
+<ul>
+    {% for course in courses %}
+        <li>{{ course.title }} - {{ course.language.name }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Display a list of lessons -->
+<ul>
+    {% for lesson in lessons %}
+        <li>{{ lesson.title }} - {{ lesson.course.title }}</li>
+    {% endfor %}
+</ul>
+</section>
+<footer>
+    <p>&copy; 2024 Language Learning App</p>
+   
+</footer>
+</body>
+</html>
