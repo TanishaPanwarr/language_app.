@@ -45,12 +45,13 @@
               {% endfor %}
             </ul>
             <!-- language_app/templates/dashboard.html -->
-            <h5>lesson_detail:</h5>
+            <h5 >lesson_detail:</h5>
         <ul>
       {% for lesson in completed_lessons %}
       <li>
         <a href="{% url 'lesson_detail' lesson_id=lesson.id %}">{{ lesson.title }}</a>
         {% comment %} <a href="{% url 'lesson_detail' %}">{{ lesson.title }}</a> {% endcomment %}
+      
       </li>
       {% endfor %}
     </ul>
@@ -67,8 +68,13 @@
           </div>
           <div class="card-body">
             <ul>
+              
+              <li><a href="{% url 'update_profile' %}">Create your profile</a></li>
               <li><a href="{% url 'community_posts' %}">Community Posts</a></li>
               <li><a href="{% url 'create_community_post' %}">Create a Community Post</a></li>
+              <li><a href="{% url 'language' %}">your language</a></li>
+              <li><a href="{% url 'select_favorite_language' %}">Select Favorite Language</a></li>
+              <li><a href="{% url 'create_lesson' %}">Create  Lesson</a></li>
             </ul>
           </div>
         </div>

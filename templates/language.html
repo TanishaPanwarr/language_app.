@@ -1,0 +1,12 @@
+<!-- language_app/templates/select_favorite_language.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Select Your  Language</h2>
+  <form method="post" action="{% url 'language' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Select  Language">
+  </form>
+{% endblock %}

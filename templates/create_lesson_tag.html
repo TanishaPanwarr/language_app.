@@ -1,0 +1,12 @@
+<!-- language_app/templates/create_lesson_tag.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create Lesson Tag</h2>
+  <form method="post" action="{% url 'create_lesson_tag' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create Tag">
+  </form>
+{% endblock %}

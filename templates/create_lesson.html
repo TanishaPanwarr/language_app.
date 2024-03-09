@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block title %}create_lesson - Language Learning App{% endblock %}
+
+ {% block content %}
+  <section class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">create_lesson</h4>
+          </div>
+          <div class="card-body">
+            <a href="{% url 'create_lesson_tag' %}">create_lesson_tag</a>
+            <form method="post" action="{% url 'create_lesson' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Create Lesson">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+          {% endblock  %}
+ 
+
